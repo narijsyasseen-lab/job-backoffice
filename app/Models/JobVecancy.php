@@ -6,12 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\softDeletes;
+use Illuminate\Notifications\Notifiable;
 
 class JobVecancy extends Model
 {
      use HasFactory, Notifiable, HasUuids, softDeletes;
 
-     protected $table = 'jobVecancies';
+     protected $table = 'job_vecancies';
 
     protected $keyType = "string";
 
@@ -26,14 +27,14 @@ class JobVecancy extends Model
     'location',
     'type',
     'jobCategoryId',
-    'companyid',
+    'companyId',
     
     ];
      protected $dates =[
         'deleted_at',
     ];
     public function jobCategory(){
-        return $this-> belongsTo(JobCategory::class, 'jobcategoryId', 'id');
+        return $this-> belongsTo(JobCategory::class, 'jobCategoryId', 'id');
     }
     public function company(){
         return $this-> belongsTo(Company::class, 'companyId', 'id');

@@ -5,12 +5,17 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\softDeletes;
+use Illuminate\Notifications\Notifiable;
+use App\Model\JobVecancy;
+use App\Model\Resume;
+use App\Model\User;
 
-class JobApplcation extends Model
+
+  class JobApplication extends Model
 {
      use HasFactory, Notifiable, HasUuids, softDeletes;
 
-     protected $table = 'Job_applcations';
+     protected $table = 'job_applications';
 
       protected $keyType = "string";
 
@@ -35,10 +40,10 @@ class JobApplcation extends Model
         ];
     }
     public function jobVacancy(){
-        return $this-> belongsTo(JobVacancy::class, 'jobVacancyid', 'id');
+        return $this-> belongsTo(JobVacancy::class, 'jobVecancyId', 'id');
     }
-    public function usre(){
-        return $this->belongsTo(user::class,'userId', 'id');
+    public function user(){
+        return $this->belongsTo(User::class,'userId', 'id');
     }
     public function resume(){
         return $this->belongsTo(Resume::class,'resumeId', 'id');

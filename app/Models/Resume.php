@@ -6,8 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\softDeletes;
+use Illuminate\Notifications\Notifiable;
 
-class Resiume extends Model
+class Resume extends Model
 {
     use HasFactory, Notifiable, HasUuids, softDeletes;
 
