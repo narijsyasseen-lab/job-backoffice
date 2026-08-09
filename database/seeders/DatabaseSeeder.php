@@ -26,14 +26,14 @@ class DatabaseSeeder extends Seeder
     {
         // seed the root admin;
 
-        User::firstOrCreate([
-            'email' => 'admin@admin.com'], [
-            
-            'name' => 'Admin',
-            'password' => Hash::make('p12345678'),
-            'role' => 'admin',
-            'email_verified_at' => now(),
-        ]);
+       User::firstOrCreate(
+          ['email' => 'admin@admin.com'], // للبحث عن المستخدم بهذا البريد
+          [
+        'name' => 'Admin',
+        'password' => Hash::make('12345678'),
+        'email_verified_at' => now(),
+    ]
+);
         //seed Data to test with 
         $jobData = json_decode(file_get_contents(database_path('data/job_data.json')), true);
         $jobApplications = json_decode(file_get_contents(database_path('data/job_applications.json')), true);
