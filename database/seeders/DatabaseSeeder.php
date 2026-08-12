@@ -8,7 +8,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\JobCategory;
 use App\Models\Company;
-use App\Models\JobVecancy;
+use App\Models\JobVacancy;
 use App\Models\JobApplication;
 use App\Models\Resume;
 use Illuminate\Support\Facades\DB;
@@ -72,7 +72,7 @@ class DatabaseSeeder extends Seeder
              $category = JobCategory::where('name', $job['category'])->firstOrFail();
 
              //*********** */
-            JobVecancy::firstOrCreate([
+            JobVacancy::firstOrCreate([
                 'title' => $job['title'],
                 'companyId' => $company->id,
             ], [
@@ -87,7 +87,7 @@ class DatabaseSeeder extends Seeder
         //Create job Applications
         foreach ($jobApplications['jobApplications'] as $application) {
           //Get random job vacancy
-          $jobVacancy = JobVecancy::inRandomOrder()->first();
+          $jobVacancy = JobVacancy::inRandomOrder()->first();
 
           //Create job seeker
           $jobSeeker = User::firstOrCreate([

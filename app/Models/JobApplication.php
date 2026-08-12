@@ -6,9 +6,10 @@ use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\softDeletes;
 use Illuminate\Notifications\Notifiable;
-use App\Model\JobVecancy;
-use App\Model\Resume;
-use App\Model\User;
+use App\Models\JobVacancy;
+use App\Models\Resume;
+use App\Models\User;
+
 
 
   class JobApplication extends Model
@@ -40,7 +41,7 @@ use App\Model\User;
         ];
     }
     public function jobVacancy(){
-        return $this-> belongsTo(JobVacancy::class, 'jobVecancyId', 'id');
+        return $this-> belongsTo(JobVacancy::class, 'jobVacancyId', 'id');
     }
     public function user(){
         return $this->belongsTo(User::class,'userId', 'id');
@@ -51,3 +52,4 @@ use App\Model\User;
 
 
 }
+

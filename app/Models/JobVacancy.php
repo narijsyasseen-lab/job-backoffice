@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\softDeletes;
 use Illuminate\Notifications\Notifiable;
 
-class JobVecancy extends Model
+class JobVacancy extends Model
 {
      use HasFactory, Notifiable, HasUuids, softDeletes;
 
@@ -39,8 +39,8 @@ class JobVecancy extends Model
     public function company(){
         return $this-> belongsTo(Company::class, 'companyId', 'id');
     }
-    public function jobVecancy(){
-        return $this-> hasMany(JobApplcation::class, 'jobVecancyId', 'id');
+    public function jobVacancy(){
+        return $this-> hasMany(JobApplication::class, 'jobVacancyId', 'id');
     }
 
 

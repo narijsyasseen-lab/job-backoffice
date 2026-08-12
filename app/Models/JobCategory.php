@@ -30,8 +30,8 @@ class JobCategory extends Model
         return ['deleted_at' => 'datetime',
         ];
     }
-     public function jobVecancies(){
-        return $this-> hasMany(JobVecancy::class, 'catrgortId', 'id');
+     public function jobVacancies(){
+        return $this-> hasMany(JobVacancy::class, 'catrgortId', 'id');
     }
 
 
