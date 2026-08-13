@@ -5,6 +5,8 @@
         </h2>
     </x-slot>
     <div class="overflow-x-auto p-6">
+        <x-toast-notification\>
+
         <!--Add Job Category button-->
         <div class="flex justify-end items-center ">
            <a href="{{ route('job-categories.create')}}" class="inline-flex items-center px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focue:outline-non focus:ring-2 focus:ring-offset-2">

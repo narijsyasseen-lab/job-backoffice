@@ -10,8 +10,11 @@
                         @csrf 
                         <div class="mb-4">
                                 <label for="name" class="block font-medium text-sm text-gray-700">Category Name</label>
-                                <input type="text" name="name" id="name" 
-                                class="mt-1 block w-full rounded-md shadow-sm border-gray-300 focus:border-indigo-500 focus:ring-indigo-500">
+                                <input type="text" name="name" id="name" value="'{{ old('name') }}"
+                                    class="{{ $errors->has('name') ? 'outline-red-500': 'outline-gray-300' }} outline outline-1 mt-1 block w-full rounded-md shadow-sm border-gray-300 focus:border-indigo-500 focus:ring-indigo-500">
+                                @error('name')
+                                   <p class="mt-2 text-sm text-red-600"> {{ $message }}</p>
+                                @enderror
                              </div>
                               
                                 <div class="flex justify-end space-x-4">
